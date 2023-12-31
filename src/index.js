@@ -1,3 +1,3 @@
 export { createNanoEvents } from './nanoevents.js';
-export { throttle, debounce } from './throttle-debounce.js';
+export { throttle } from './throttle-debounce.js';
 export { isEqual } from './isEqual.js';
