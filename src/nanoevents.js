@@ -1,3 +1,7 @@
+/**
+ * @source https://github.com/ai/nanoevents
+ * @description 精简的发布订阅模式
+ */
 export const createNanoEvents = () => ({
 	events: {},
 	on(event, cb) {

@@ -1,4 +1,5 @@
 /**
+ * @source https://github.com/niksy/throttle-debounce
  * @description n 秒内只执行一次
  * @param {number} delay 延迟时间，毫秒，一般 200 比较有用
  * @param {Function} callback 回调函数，传递 this 和 arguments
