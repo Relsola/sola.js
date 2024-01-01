@@ -1,11 +1,8 @@
 {
-  "name": "sola.js",
-  "version": "1.0.0",
-  "description": "A streamlined function tool library",
-  "author": "Relsola<sola001018@gmail.com>",
-  "main": "src/index.js",
-  "type": "module",
-  "dependencies": {
-    "sola.js": "^1.0.0"
-  }
+	"name": "sola.js",
+	"version": "1.0.0",
+	"description": "A streamlined function tool library",
+	"author": "Relsola<sola001018@gmail.com>",
+	"main": "src/index.js",
+	"type": "module"
 }
