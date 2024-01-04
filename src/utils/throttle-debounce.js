@@ -4,11 +4,11 @@
  * @param {number} delay 延迟时间，毫秒，一般 200 比较有用
  * @param {Function} callback 回调函数，传递 this 和 arguments
  * @param {boolean} [immediate] 立即执行，默认为 true
- * @param {boolean} [debounceMode] 防抖模式，是否在 delay 之前执行回调函数
- * @returns {Function} throttle_function 节流防抖函数
- * @returns {Function} throttle_function.cancel 取消执行节流防抖函数
+ * @returns {Function} throttle_function 节流函数
+ * @returns {Function} throttle_function.cancel 取消执行节流函数
  */
 export function throttle(delay, callback, immediate = true, debounceMode) {
+	/** debounceMode 防抖模式 ，true 在 delay 之前执行，false 在 delay 之后执行 */
 	let timeoutID;
 	let cancelled = false;
 	let lastExec = 0;
@@ -68,4 +68,17 @@ export function throttle(delay, callback, immediate = true, debounceMode) {
 
 	wrapper.cancel = cancel;
 	return wrapper;
+}
+
+/**
+ * @source https://github.com/niksy/throttle-debounce
+ * @description 点击后 n 秒才执行
+ * @param {number} delay 延迟时间，毫秒，一般 200 比较有用
+ * @param {Function} callback 回调函数，传递 this 和 arguments
+ * @param {boolean} [immediate] 立即执行 默认为 true
+ * @returns {Function} debounce_function 防抖函数
+ * @returns {Function} debounce_function.cancel 取消执行防抖函数
+ */
+export function debounce(delay, callback, immediate = true) {
+	return throttle(delay, callback, true, immediate);
 }
