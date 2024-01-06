@@ -49,21 +49,43 @@ pnpm publish
 
 从目标对象中选择提供的属性（**hasOwn 返回 true**）返回一个只包含提供属性的新对象
 
-### 6. `omit`
+### 7. `omit`
 
-从目标对象中选择提供的属性（**[[enumerable ]] 为 true**）返回一个不包含提供属性的新对象
+从目标对象中选择提供的属性（**[[enumerable]] 为 true**）返回一个不包含提供属性的新对象
 
-### 6. `zip`
+### 8. `zip`
 
 将每个元素数组与另一个元素数组进行匹配，并用于将多个数组合并为单个二维数组
 
+### 9. `typeOf `
 
+校验数据类型
+
+### 10. `getSearchParams`
+
+解析 URL 参数
+
+### 11. `uniqueArrayObject`
+
+根据指定属性过滤数组对象
+
+### 12. `createUUID`
+
+ 创建 uuid
+
+### 13. `moneyFormat`
+
+金额格式化
 
 
 
 ## Complex
 
 复杂工具，接收一个参数和配置项，返回结果可能含有副作用
+
+### 1. `MyCache `
+
+存储操作
 
 
 
