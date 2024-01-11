@@ -6,6 +6,6 @@ export default function isEqual(values, compareFn) {
 		compareFn = Object.is;
 	}
 	const recursivelyCheckEqual = (value, ...rest) =>
-		compareFn(value, rest[0]) && (rest.length < 2 || recursivelyCheckEqual(...rest));
-	return recursivelyCheckEqual(...values);
+		compareFn(value, rest[0]) && (rest.length < 2 || recursivelyCheckEqual(...(rest as [any])));
+	return recursivelyCheckEqual(...(values as [any]));
 }
