@@ -4,7 +4,7 @@
  * @param {string} key
  * @returns
  */
-export function uniqueArrayObject(arr, key) {
+export default function uniqueArrayObject(arr, key) {
 	if (!Array.isArray(arr) || arr.length <= 1) {
 		return arr;
 	}

@@ -3,7 +3,7 @@
  * @param {any[][]} arrays
  * @returns {Array}
  */
-export function zip(...arrays) {
+export default function zip(...arrays) {
 	const [m, n] = [arrays.length, Math.max(...arrays.map(arr => arr.length))];
 	return Array.from({ length: n }, (_, i) => Array.from({ length: m }, (_, k) => arrays[k][i]));
 }

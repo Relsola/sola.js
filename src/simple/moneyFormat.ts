@@ -6,7 +6,7 @@
  * @param {string} thousands_sep：千分位符号
  * @returns
  */
-export const moneyFormat = (number, decimals, dec_point, thousands_sep) => {
+export default function moneyFormat(number, decimals, dec_point, thousands_sep) {
 	number = (number + '').replace(/[^0-9+-Ee.]/g, '');
 	const n = !isFinite(+number) ? 0 : +number;
 	const prec = !isFinite(+decimals) ? 2 : Math.abs(decimals);
@@ -28,4 +28,4 @@ export const moneyFormat = (number, decimals, dec_point, thousands_sep) => {
 		s[1] += new Array(prec - s[1].length + 1).join('0');
 	}
 	return s.join(dec);
-};
+}

@@ -3,6 +3,6 @@
  * @param {any} value
  * @returns {'Number'|'String'|'Undefined'|'Null'|'Object'|'Array'|'Function'}
  */
-export function typeOf(value) {
+export default function typeOf(value) {
 	return Object.prototype.toString.call(value).slice(8, -1);
 }

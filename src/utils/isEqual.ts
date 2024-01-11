@@ -1,4 +1,4 @@
-export const isEqual = (values, compareFn) => {
+export default function isEqual(values, compareFn) {
 	if (!Array.isArray(values) || values.length <= 1) {
 		return true;
 	}
@@ -8,4 +8,4 @@ export const isEqual = (values, compareFn) => {
 	const recursivelyCheckEqual = (value, ...rest) =>
 		compareFn(value, rest[0]) && (rest.length < 2 || recursivelyCheckEqual(...rest));
 	return recursivelyCheckEqual(...values);
-};
+}

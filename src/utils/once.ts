@@ -1,4 +1,4 @@
-export function once(fn) {
+export default function once(fn) {
 	let ran = false;
 	let result;
 	return function () {

@@ -3,6 +3,6 @@
  * @param {Function} fn
  * @returns {Function}
  */
-export function partial(fn, ...rest) {
+export default function partial(fn, ...rest) {
 	return (...arg) => fn(...rest, ...arg);
 }
