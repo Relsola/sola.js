@@ -1,9 +1,8 @@
-export { default as createNanoEvents } from './utils/nanoevents.ts';
-export { throttle, debounce } from './utils/throttle-debounce.ts';
-export { default as isEqual } from './utils/isEqual.ts';
-export { default as deepClone } from './utils/deepClone.ts';
-export { default as once } from './utils/once.ts';
-
+export { default as createNanoEvents } from './more/nanoevents.ts';
+export { throttle, debounce } from './complex/throttle-debounce.ts';
+export { default as isEqual } from './simple/isEqual.ts';
+export { default as deepClone } from './simple/deepClone.ts';
+export { default as once } from './simple/once.ts';
 export { default as createUUID } from './simple/createUUID.ts';
 export { default as curry } from './simple/curry.ts';
 export { default as getSearchParams } from './simple/getSearchParams.ts';
