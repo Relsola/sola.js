@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "esnext",
+		"lib": ["esnext", "dom"],
+		"baseUrl": ".",
+		"outDir": "lib",
+		"rootDir": "./packages",
+		"allowJs": true,
+		"removeComments": true,
+		"esModuleInterop": true,
+
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+
+		"sourceMap": false,
+		"jsx": "preserve",
+		"newLine": "LF",
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"isolatedModules": true
+	},
+
+	"include": ["packages"]
+}
