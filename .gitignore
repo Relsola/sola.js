@@ -1,5 +1,10 @@
+# editor
 .vscode
+
+# folder
+lib
+
+# file
 .gitignore
 node_modules
 pnpm-lock.yaml
-.lib

@@ -9,6 +9,10 @@
 		"allowJs": true,
 		"removeComments": true,
 		"esModuleInterop": true,
+		"jsx": "preserve",
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"isolatedModules": true,
 
 		"strict": true,
 		"noUnusedLocals": true,
@@ -16,11 +20,10 @@
 		"noImplicitReturns": true,
 
 		"sourceMap": false,
-		"jsx": "preserve",
-		"newLine": "LF",
-		"experimentalDecorators": true,
-		"moduleResolution": "node",
-		"isolatedModules": true
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"stripInternal": true,
+		"newLine": "LF"
 	},
 
 	"include": ["packages"]
