@@ -1,4 +1,4 @@
-export default function deepClone(source: unknown, map = new WeakMap()) {
+export function deepClone(source: unknown, map = new WeakMap()) {
 	if (!source || typeof source !== 'object') {
 		return source;
 	}

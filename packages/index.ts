@@ -1,11 +1,12 @@
 export { createNanoEvents } from './complex/nanoevents.js';
 export { throttle, debounce } from './complex/throttle-debounce.js';
+
 export { default as isEqual } from './simple/isEqual.js';
-export { default as deepClone } from './simple/deepClone.js';
+export { deepClone } from './simple/deepClone.js';
 export { once } from './simple/once.js';
-export { default as createUUID } from './simple/createUUID.js';
-export { default as curry } from './simple/curry.js';
-export { default as getSearchParams } from './simple/getSearchParams.js';
+export { createUUID } from './simple/createUUID.js';
+export { curry } from './simple/curry.js';
+export { getSearchParams } from './simple/getSearchParams.js';
 export { default as memoize } from './simple/memoize.js';
 export { default as moneyFormat } from './simple/moneyFormat.js';
 export { default as omit } from './simple/omit.js';
