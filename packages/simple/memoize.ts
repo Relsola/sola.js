@@ -1,7 +1,7 @@
 /**
  * @description 记忆缓存
  */
-export default function memoize(fn: Function): Function {
+export function memoize(fn: Function): Function {
 	const cache: Map<string, any> = new Map();
 	const cached = function () {
 		const key = JSON.stringify(arguments);
