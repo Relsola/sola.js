@@ -1,4 +1,4 @@
-export { default as createNanoEvents } from './more/nanoevents.js';
+export { createNanoEvents } from './complex/nanoevents.js';
 export { throttle, debounce } from './complex/throttle-debounce.js';
 export { default as isEqual } from './simple/isEqual.js';
 export { default as deepClone } from './simple/deepClone.js';
