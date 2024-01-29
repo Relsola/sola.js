@@ -11,7 +11,7 @@ export { default as memoize } from './simple/memoize.js';
 export { default as moneyFormat } from './simple/moneyFormat.js';
 export { default as omit } from './simple/omit.js';
 export { default as partial } from './simple/partial.js';
-export { default as pick } from './simple/pick.js';
+export { pick } from './simple/pick.js';
 export { pipe, compose } from './simple/pipe.js';
 export { default as typeOf } from './simple/typeOf.js';
 export { default as uniqueArrayObject } from './simple/uniqueArrayObject.js';
