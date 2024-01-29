@@ -1,6 +1,6 @@
 {
 	"name": "sola.js",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "A streamlined function tool library",
 	"author": "Relsola<sola001018@gmail.com>",
 	"main": "lib/index.cjs.js",
