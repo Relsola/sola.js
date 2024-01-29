@@ -77,26 +77,35 @@ interface Emitter<Events extends EventsMap = DefaultEvents> {
  * ```
  */
 
-type NanoEvents = <
-	Events extends EventsMap = DefaultEvents
->() => Emitter<Events>;
+// type NanoEvents = <
+// 	Events extends EventsMap = DefaultEvents
+// >() => Emitter<Events>;
+type NanoEvents = {
+	events: Map<string, Function[]>;
+	emit: (event: string, ...args: any[]) => void;
+	on: (event: string, cb: Function) => () => void;
+};
 
 /**
  * @source https://github.com/ai/nanoevents
  * @description 精简的发布订阅模式
  */
-export const createNanoEvents: NanoEvents = () => ({
-	events: {},
+export const createNanoEvents = (): NanoEvents => ({
+	events: new Map(),
 	emit(event, ...args) {
-		const callbacks = this.events[event] || [];
+		const callbacks = this.events.get(event) || [];
 		for (let i = 0, length = callbacks.length; i < length; i++) {
 			callbacks[i](...args);
 		}
 	},
 	on(event, cb) {
-		(this.events[event] ||= []).push(cb);
+		const events = this.events;
+		events.has(event) ? events.get(event)!.push(cb) : events.set(event, [cb]);
 		return () => {
-			this.events[event] = this.events[event]?.filter(i => cb !== i);
+			events.set(
+				event,
+				events.get(event)!.filter(i => cb !== i)
+			);
 		};
 	}
 });
