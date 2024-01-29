@@ -71,26 +71,8 @@ pnpm publish
 
 ### 12. `createUUID`
 
- 创建 uuid
+创建 uuid
 
 ### 13. `moneyFormat`
 
 金额格式化
-
-
-
-## Complex
-
-复杂工具，接收一个参数和配置项，返回结果可能含有副作用
-
-### 1. `MyCache `
-
-存储操作
-
-
-
-
-
-## More
-
-一个完整的功能库，返回结果含有多个副作用
