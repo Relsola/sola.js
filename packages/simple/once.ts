@@ -1,4 +1,4 @@
-export default function once(fn: Function): any {
+export function once(fn: Function): Function {
 	let ran: boolean = false;
 	let result: any;
 	return function () {
