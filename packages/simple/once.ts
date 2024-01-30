@@ -1,7 +1,7 @@
 export function once(fn: Function): Function {
 	let ran: boolean = false;
 	let result: any;
-	return function () {
+	return function (this: any) {
 		if (ran) {
 			return result;
 		}
