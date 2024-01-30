@@ -1,15 +1,14 @@
-type Fn = (...args: any[]) => any;
-type R<T extends Fn> = ReturnType<T>;
-type P<T extends Fn> = Parameters<T>;
+import { Fn } from '../types';
 
 export const memoize = <T extends Fn>(fn: T) => {
-	const cache: Map<string, R<T>> = new Map();
-	const cached = function (this: any, ...args: P<T>) {
+	const cache: Map<string, ReturnType<T>> = new Map();
+
+	const cached = function (this: any, ...args: Parameters<T>) {
 		const key = Array.prototype.join.call(args);
-		return cache.has(key)
-			? (cache.get(key) as R<T>)
-			: cache.set(key, fn.apply(this, args)) && (cache.get(key) as R<T>);
+		!cache.has(key) && cache.set(key, fn.apply(this, args));
+		return cache.get(key) as ReturnType<T>;
 	};
+
 	cached.cache = cache;
 	return cached;
 };
