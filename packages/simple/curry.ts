@@ -1,12 +1,8 @@
-/**
- * @description 柯里化
- * @param fn 目标函数
- * @param arity 参数数量
- */
-export function curry(fn: Function, arity: number = fn.length): Function | any {
-	const curried: (...rest: any[]) => any | Function = function (
-		...rest: any[]
-	) {
+export function curry<T extends Function>(
+	fn: T,
+	arity: number = fn.length
+): T | any {
+	const curried: (...rest: any[]) => any | T = function (...rest: any[]) {
 		return rest.length >= arity
 			? fn(...rest)
 			: (...args: any[]) => curried(...rest, ...args);
