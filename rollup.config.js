@@ -1,10 +1,10 @@
-const resolve = require('@rollup/plugin-node-resolve');
-const typescript = require('@rollup/plugin-typescript');
-const commonjs = require('@rollup/plugin-commonjs');
-const terser = require('@rollup/plugin-terser');
-const postcss = require('rollup-plugin-postcss');
+import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
+import commonjs from '@rollup/plugin-commonjs';
+import terser from '@rollup/plugin-terser';
+import postcss from 'rollup-plugin-postcss';
 
-module.exports = [
+export default [
 	{
 		input: './packages/index.ts',
 		output: [

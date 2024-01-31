@@ -15,15 +15,27 @@ pnpm version patch
 pnpm publish
 ```
 
-## Simple
+### `createNanoEvents`
 
-简单工具 接收参数，返回一个执行结果
+小型发布订阅模型
 
-### 1. `memoize`
+### `throttle` `debounce`
+
+节流防抖
+
+### `deepClone`
+
+处理简单情况的深克隆
+
+### `once`
+
+只执行一行，再次执行返回第一次的值
+
+### `memoize`
 
 用于缓存给定函数的结果，以防止多次使用相同参数调用计算代价高昂的例程。
 
-### 2. `curry`
+### `curry`
 
 用于通过“预填充”一些参数来从现有函数创建一个新函数。
 
@@ -33,46 +45,14 @@ pnpm publish
 - 它使代码更具可读性
 - 它将函数划分为多个较小的函数，符合单一职责
 
-### 3. `partial`
-
-参入一个现有的函数及部分参数，返回一个新函数，新函数在调用时以定义时传入的参数和新参数合并在一起调用原始函数。
-
-### 4. `pipe`
-
-管道函数，链接多个函数使用 `reduce` 方法从左到右依次执并将一个函数的输出传递给下一个函数，返回最后一个函数的输出
-
-### 5. `compose`
-
-与管道函数相同，但它使用 `reduceRight` 应用所有函数
-
-### 6. `pick`
-
-从目标对象中选择提供的属性（**hasOwn 返回 true**）返回一个只包含提供属性的新对象
-
-### 7. `omit`
-
-从目标对象中选择提供的属性（**[[enumerable]] 为 true**）返回一个不包含提供属性的新对象
-
-### 8. `zip`
-
-将每个元素数组与另一个元素数组进行匹配，并用于将多个数组合并为单个二维数组
-
-### 9. `typeOf `
+### `getType `
 
 校验数据类型
 
-### 10. `getSearchParams`
+### `getSearchParams`
 
 解析 URL 参数
 
-### 11. `uniqueArrayObject`
+### `uniqueArrayObject`
 
 根据指定属性过滤数组对象
-
-### 12. `createUUID`
-
-创建 uuid
-
-### 13. `moneyFormat`
-
-金额格式化
