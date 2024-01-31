@@ -1,3 +1,5 @@
+// https://github.com/ai/nanoevents
+
 interface EventsMap {
 	[event: string]: any;
 }
@@ -6,98 +8,38 @@ interface DefaultEvents extends EventsMap {
 	[event: string]: (...args: any) => void;
 }
 
-export interface Unsubscribe {
+interface Unsubscribe {
 	(): void;
 }
 
-interface Emitter<Events extends EventsMap = DefaultEvents> {
-	/**
-	 * Calls each of the listeners registered for a given event.
-	 *
-	 * ```js
-	 * ee.emit('tick', tickType, tickDuration)
-	 * ```
-	 *
-	 * @param event The event name.
-	 * @param args The arguments for listeners.
-	 */
+export interface Emitter<Events extends EventsMap = DefaultEvents> {
+	events: {
+		get<E extends keyof Events>(key: E): Events[E][] | undefined;
+	} & Map<any, any>;
+
 	emit<K extends keyof Events>(
 		this: this,
 		event: K,
 		...args: Parameters<Events[K]>
 	): void;
 
-	/**
-	 * Event names in keys and arrays with listeners in values.
-	 *
-	 * ```js
-	 * emitter1.events = emitter2.events
-	 * emitter2.events = { }
-	 * ```
-	 */
-	events: Partial<{ [E in keyof Events]: Events[E][] }>;
-
-	/**
-	 * Add a listener for a given event.
-	 *
-	 * ```js
-	 * const unbind = ee.on('tick', (tickType, tickDuration) => {
-	 *   count += 1
-	 * })
-	 *
-	 * disable () {
-	 *   unbind()
-	 * }
-	 * ```
-	 *
-	 * @param event The event name.
-	 * @param cb The listener function.
-	 * @returns Unbind listener from event.
-	 */
 	on<K extends keyof Events>(this: this, event: K, cb: Events[K]): Unsubscribe;
 }
 
-/**
- * Create event emitter.
- *
- * ```js
- * import { createNanoEvents } from 'nanoevents'
- *
- * class Ticker {
- *   constructor() {
- *     this.emitter = createNanoEvents()
- *   }
- *   on(...args) {
- *     return this.emitter.on(...args)
- *   }
- *   tick() {
- *     this.emitter.emit('tick')
- *   }
- * }
- * ```
- */
+type createNanoEvents = <
+	Events extends EventsMap = DefaultEvents
+>() => Emitter<Events>;
 
-// type NanoEvents = <
-// 	Events extends EventsMap = DefaultEvents
-// >() => Emitter<Events>;
-type NanoEvents = {
-	events: Map<string, Function[]>;
-	emit: (event: string, ...args: any[]) => void;
-	on: (event: string, cb: Function) => () => void;
-};
-
-/**
- * @source https://github.com/ai/nanoevents
- * @description 精简的发布订阅模式
- */
-export const createNanoEvents = (): NanoEvents => ({
+export const createNanoEvents: createNanoEvents = () => ({
 	events: new Map(),
+
 	emit(event, ...args) {
 		const callbacks = this.events.get(event) || [];
 		for (let i = 0, length = callbacks.length; i < length; i++) {
 			callbacks[i](...args);
 		}
 	},
+
 	on(event, cb) {
 		const events = this.events;
 		events.has(event) ? events.get(event)!.push(cb) : events.set(event, [cb]);
