@@ -1,6 +1,6 @@
 {
 	"name": "sola.js",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "A streamlined function tool library",
 	"author": "Relsola<sola001018@gmail.com>",
 	"type": "module",
