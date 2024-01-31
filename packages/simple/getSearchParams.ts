@@ -1,11 +1,11 @@
 export const getSearchParams = (url?: string): Record<string, string> => {
-if(!url){
-const href = window.location.href
-url = href.substring(href.lastIndexOf('?'))
-}
+	url ||= window.location.href;
+	url = url.substring(url.lastIndexOf('?'));
 	const params: Record<string, string> = {};
+
 	new URLSearchParams(url).forEach((value: string, key: string) => {
 		params[key] = value;
 	});
+
 	return params;
 };
