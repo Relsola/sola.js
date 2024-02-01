@@ -1,6 +1,4 @@
-import { Fn } from '../types';
-
-export const memoize = <T extends Fn>(fn: T) => {
+export const memoize = <T extends (...args: any[]) => any>(fn: T) => {
 	const cache: Map<string, ReturnType<T>> = new Map();
 
 	const cached = function (this: any, ...args: Parameters<T>) {

@@ -1,6 +1,4 @@
-import { Fn } from '../types';
-
-export const once = <T extends Fn>(fn: T) => {
+export const once = <T extends (...args: any[]) => any>(fn: T) => {
 	let ran: boolean = false;
 	let result: ReturnType<T>;
 	return function (this: any, ...args: Parameters<T>) {

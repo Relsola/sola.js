@@ -10,13 +10,13 @@ export default [
 			{
 				dir: 'lib',
 				format: 'cjs',
-				entryFileNames: '[name].cjs.js',
+				entryFileNames: 'index.cjs.js',
 				sourcemap: false
 			},
 			{
 				dir: 'lib',
 				format: 'esm',
-				entryFileNames: '[name].esm.js',
+				entryFileNames: 'index.esm.js',
 				sourcemap: false
 			}
 		],
