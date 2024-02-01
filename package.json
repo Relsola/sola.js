@@ -1,26 +1,17 @@
 {
 	"name": "sola.js",
 	"version": "1.0.9",
-	"description": "A streamlined function tool library",
-	"author": "Relsola<sola001018@gmail.com>",
 	"type": "module",
 	"types": "lib/index.d.ts",
 	"main": "lib/index.cjs.js",
 	"module": "lib/index.esm.js",
-	"jsnext:main": "lib/index.esm.js",
 	"scripts": {
-		"build": "rollup --config",
-		"coveralls": "jest --coverage"
+		"build": "rollup --config"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.23.9",
-		"@babel/preset-env": "^7.23.9",
 		"@rollup/plugin-commonjs": "^25.0.7",
-		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-typescript": "^11.1.6",
-		"jest-environment-jsdom": "^29.7.0",
 		"rollup": "^4.9.6",
-		"rollup-plugin-postcss": "^4.0.2",
 		"tslib": "^2.6.2"
 	},
 	"packageManager": "pnpm@8.15.0",
