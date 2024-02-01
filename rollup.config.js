@@ -1,7 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
-import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 
 export default [
@@ -19,14 +18,6 @@ export default [
 				format: 'esm',
 				entryFileNames: '[name].esm.js',
 				sourcemap: false
-			},
-			{
-				dir: 'lib',
-				format: 'umd',
-				entryFileNames: '[name].umd.js',
-				name: '$S',
-				sourcemap: false,
-				plugins: [terser()]
 			}
 		],
 		plugins: [
